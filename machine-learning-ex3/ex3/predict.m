@@ -21,10 +21,23 @@ p = zeros(size(X, 1), 1);
 %       can use max(A, [], 2) to obtain the max for each row.
 %
 
+% Theta1 has size 25 x 401
+% Theta2 has size 10 x 26
+% X has size 5000 x 400
 
+% hidden layer 25 unit(without bias unit)
+% If A is a matrix, then max(A) is a row vector containing the maximum value of each column.
 
-
-
+% add bias unit to a1 
+a1 = [ones(m,1) X]; 
+z2 = a1 * Theta1';
+a2 = sigmoid(z2);
+% add bias unit to a2
+a2 = [ones(m,1) a2]; 
+z3 = a2 * Theta2';
+a3 = sigmoid(z3);
+[M,I] = max(a3');
+p = I';
 
 
 

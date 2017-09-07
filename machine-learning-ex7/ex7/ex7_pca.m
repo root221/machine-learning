@@ -111,6 +111,7 @@ fprintf('\nLoading face dataset.\n\n');
 
 %  Load Face dataset
 load ('ex7faces.mat')
+% size(X) 5000x1024
 
 %  Display the first 100 faces in the dataset
 displayData(X(1:100, :));
